@@ -10,24 +10,48 @@ public class ShootPlayer : MonoBehaviour
 
     private float shootTimer;
 
+    public Transform target; 
+    public float speed = 3f; 
+    public float stoppingDistance = 2f; 
+
+    private Vector2 direction;
+
+    private float distance;
+
     void Update()
     {
 
-        shootTimer += Time.deltaTime;
+        if (target == null) return; 
+
+        
+        direction = (target.position - transform.position).normalized;
+
+
+        distance = Vector2.Distance(transform.position, target.position);
+
+
+        if (distance > stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        }else{
+            shootTimer += Time.deltaTime;
         if (shootTimer >= shootingInterval)
         {
             ShootAtPlayer();
             shootTimer = 0f;
         }
+        }
+
     }
 
-    void ShootAtPlayer()
+
+
+    public void ShootAtPlayer()
     {
         if (player == null) return;
 
         GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
 
-        // Calculate the direction to the player
         Vector2 direction = (player.position - transform.position).normalized;
 
         Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
