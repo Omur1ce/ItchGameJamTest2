@@ -10,7 +10,6 @@ public class EnemyAI : MonoBehaviour
 
     private float shootTimer;
 
-    public Transform target; 
     public float speed = 3f; 
     public float stoppingDistance = 2f; 
 
@@ -18,21 +17,36 @@ public class EnemyAI : MonoBehaviour
 
     private float distance;
 
+    void Start(){
+            Debug.Log("Looking for player");
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+                Debug.Log("Player assigned to player in EnemyAI.");
+            }
+            else
+            {
+                Debug.LogWarning("Player not found with tag 'Player'.");
+            }
+        
+    }
+
     void Update()
     {
 
-        if (target == null) return; 
+        if (player == null) return; 
 
         
-        direction = (target.position - transform.position).normalized;
+        direction = (player.position - transform.position).normalized;
 
 
-        distance = Vector2.Distance(transform.position, target.position);
+        distance = Vector2.Distance(transform.position, player.position);
 
 
         if (distance > stoppingDistance)
         {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }else{
             shootTimer += Time.deltaTime;
         if (shootTimer >= shootingInterval)

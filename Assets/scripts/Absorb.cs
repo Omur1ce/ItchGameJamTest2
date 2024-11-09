@@ -73,11 +73,9 @@ public class Absorb : MonoBehaviour
     {
         if (storedElements.Count < 3){
             storedElements.Enqueue(incomingElement);
-            Debug.Log("Storing element");
         }
         else if (storedElements.Count == 3){
             string dequed = storedElements.Dequeue();
-            Debug.Log("dequed");
         }
     }
     
