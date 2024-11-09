@@ -8,6 +8,8 @@ public class Absorb : MonoBehaviour
     public Color state2Color = Color.green;
     public Color state3Color = Color.blue;
 
+
+    private Queue<string> storedElements = new Queue<string>();
     private SpriteRenderer spriteRenderer;
     private int currentState = 1;
     public string element = "Fire";  // Current element of the player
@@ -49,46 +51,35 @@ public class Absorb : MonoBehaviour
                 break;
             case 2:
                 spriteRenderer.color = state2Color;
-                element = "Wind";
+                element = "Water";
                 break;
             case 3:
                 spriteRenderer.color = state3Color;
-                element = "Water";
+                element = "Wind";
                 break;
             default:
                 break;
         }
     }
 
+    
     //player is immune to the incoming attack element
     public bool IsImmune(string incomingElement)
     {
         return element == incomingElement;
     }
 
-    // Store spell if elements match
-    private void OnTriggerEnter2D(Collider2D other)
+    public void addToStoredElements(string incomingElement)
     {
-        SpellDamage spell = other.GetComponent<SpellDamage>();
-        if (spell != null)
-        {
-            Debug.Log("Collision detected with spell: " + spell.element);
-            Debug.Log("Player element: " + element);
-
-            if (spell.element == element)
-            {
-                storedSpellPrefab = other.gameObject;
-                Debug.Log("Spell stored: " + spell.element);
-
-                Destroy(other.gameObject);
-            }
-            else
-            {
-                Debug.Log("Spell not stored, element mismatch: " + spell.element);
-            }
+        if (storedElements.Count < 3){
+            storedElements.Enqueue(incomingElement);
+            Debug.Log("Storing element");
+        }
+        else if (storedElements.Count == 3){
+            string dequed = storedElements.Dequeue();
+            Debug.Log("dequed");
         }
     }
-
 
     public GameObject GetStoredSpell()
     {
