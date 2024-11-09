@@ -9,7 +9,7 @@ public class Absorb : MonoBehaviour
     public Color state3Color = Color.blue;
 
 
-    private Queue<string> storedElements = new Queue<string>();
+    public Queue<string> storedElements = new Queue<string>();
     private SpriteRenderer spriteRenderer;
     private int currentState = 1;
     public string element = "Fire";  // Current element of the player
@@ -80,16 +80,11 @@ public class Absorb : MonoBehaviour
             Debug.Log("dequed");
         }
     }
-
-    public GameObject GetStoredSpell()
+    
+    public void ClearStoredElements()
     {
-        return storedSpellPrefab;
+        storedElements.Clear();
     }
-    public void ClearStoredSpell()
-    {
-        storedSpellPrefab = null;
-    }
-
 
 
 }

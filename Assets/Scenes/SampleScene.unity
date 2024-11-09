@@ -280,7 +280,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177697139}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afcd9bc2a7825a43af21cf8e88072f5, type: 3}
   m_Name: 
@@ -463,7 +463,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264707650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afcd9bc2a7825a43af21cf8e88072f5, type: 3}
   m_Name: 
@@ -1340,7 +1340,6 @@ GameObject:
   - component: {fileID: 1422396734}
   - component: {fileID: 1422396733}
   - component: {fileID: 1422396732}
-  - component: {fileID: 1422396738}
   - component: {fileID: 1422396739}
   - component: {fileID: 1422396740}
   - component: {fileID: 1422396741}
@@ -1524,20 +1523,6 @@ Transform:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1422396738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422396731}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5acf5ae593a47c9449118f67cf4d01a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  radius: 1
-  segments: 50
 --- !u!120 &1422396739
 LineRenderer:
   serializedVersion: 2
@@ -1546,7 +1531,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1422396731}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1671,6 +1656,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spellSpeed: 10
+  script: {fileID: 1422396732}
+  fireballPrefab: {fileID: 750389516126894091, guid: 29bb7b23697fe7f4eb1c11fdce7e670b, type: 3}
+  summonMageInternsPrefab: {fileID: 0}
+  fireWhirlwindPrefab: {fileID: 0}
+  waterWallPrefab: {fileID: 0}
+  geyserPrefab: {fileID: 0}
+  selfHealPrefab: {fileID: 0}
+  ghostPrefab: {fileID: 0}
+  whirlwindPrefab: {fileID: 0}
+  tornadoPrefab: {fileID: 0}
+  shockwavePrefab: {fileID: 0}
 --- !u!1 &2017415850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1698,7 +1694,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017415850}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3afcd9bc2a7825a43af21cf8e88072f5, type: 3}
   m_Name: 

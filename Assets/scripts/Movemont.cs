@@ -8,6 +8,7 @@ public class Movemont : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    Animator animator;
 
     void Start()
     {
@@ -19,7 +20,18 @@ public class Movemont : MonoBehaviour
     {
 
         movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical"); 
+        movement.y = Input.GetAxisRaw("Vertical");
+
+        if (movement.x < -0.0001)
+        {
+            animator.SetBool("FacingLeft", true);
+            animator.SetBool("FacingRight", false);
+        }
+        if (movement.x > 0.0001)
+        {
+            animator.SetBool("FacingLeft", false);
+            animator.SetBool("FacingRight", true);
+        }
     }
 
     void FixedUpdate()

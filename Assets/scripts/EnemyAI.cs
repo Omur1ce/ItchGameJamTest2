@@ -37,7 +37,6 @@ public class EnemyAI : MonoBehaviour
             shootTimer += Time.deltaTime;
         if (shootTimer >= shootingInterval)
         {
-            Debug.Log("should be shooting");
             ShootAtPlayer();
             shootTimer = 0f;
         }
