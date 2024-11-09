@@ -9,10 +9,11 @@ public class Movemont : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     Animator animator;
+    private bool facingLeft = true;
 
     void Start()
     {
-
+        //animator.SetBool("isRunning", false);
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -22,21 +23,35 @@ public class Movemont : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
 
-        if (movement.x < -0.0001)
+        if (movement.x < 0 && !facingLeft)
         {
-            animator.SetBool("FacingLeft", true);
-            animator.SetBool("FacingRight", false);
+            Flip();
         }
-        if (movement.x > 0.0001)
+        if (movement.x > 0 && facingLeft)
         {
-            animator.SetBool("FacingLeft", false);
-            animator.SetBool("FacingRight", true);
+            Flip();
+        }
+
+        if (Mathf.Abs(movement.x + movement.y) > 5)
+        {
+            animator.SetBool("isRunning", true);
         }
     }
 
+
+    void Flip()
+    {
+        Vector3 currentScale = gameObject.transform.localScale;
+        currentScale.x *= -1;
+        gameObject.transform.localScale = currentScale;
+
+        facingLeft = !facingLeft;
+    }
+
+
+
     void FixedUpdate()
     {
-
         rb.linearVelocity = movement.normalized * moveSpeed;
     }
 }
