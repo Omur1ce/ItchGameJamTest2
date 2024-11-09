@@ -14,7 +14,7 @@ public class Absorb : MonoBehaviour
     private int currentState = 1;
     public string element = "Fire";  // Current element of the player
 
-    private GameObject storedSpellPrefab;
+    public GameObject storedSpellPrefab;
 
     void Start()
     {
