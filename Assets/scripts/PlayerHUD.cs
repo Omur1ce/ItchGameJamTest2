@@ -8,6 +8,8 @@ public class PlayerHUD : MonoBehaviour
     public TextMeshProUGUI healthText; // Use TextMeshProUGUI if using TextMeshPro, or Text if using normal Text
     private PlayerHealth playerHealth;
 
+
+
     void Start()
     {
         playerHealth = GameObject.FindWithTag("Player").GetComponent<PlayerHealth>();
@@ -23,6 +25,10 @@ public class PlayerHUD : MonoBehaviour
         healthSlider.value = playerHealth.GetCurrentHealth();
         UpdateHealthText();
     }
+
+
+
+    
 
     private void UpdateHealthText()
     {

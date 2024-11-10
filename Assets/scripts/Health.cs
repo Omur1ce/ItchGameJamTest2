@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public GameObject gameOverUI; 
+
     void Start()
     {
   
@@ -27,7 +29,14 @@ public class PlayerHealth : MonoBehaviour
     private void Die()
     {
         Debug.Log("Player has died!");
+        ShowGameOverScreen();
 
+    }
+
+    private void ShowGameOverScreen()
+    {
+        Time.timeScale = 0f; 
+        gameOverUI.SetActive(true); 
     }
 
     public int GetCurrentHealth()
