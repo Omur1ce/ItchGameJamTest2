@@ -32,7 +32,7 @@ public class AbsorbUI : MonoBehaviour
         // Check if all element slots are filled, then clear if full
         if (absorbScript.storedElements.Count >= elementSlots.Count)
         {
-            //absorbScript.ClearStoredElements();
+            absorbScript.ClearStoredElements();
             SetDefaultSprites();
         }
         else
