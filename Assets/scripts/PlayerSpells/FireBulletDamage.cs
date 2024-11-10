@@ -6,7 +6,7 @@ public class FireBulletDamage : MonoBehaviour
     public string element;
     public float particleEffectSize = 0.1f;
     public ParticleSystem damageEffect; // Assign a particle effect prefab in the inspector
-
+    public GameObject bulletExplosionPrefab;
     void Start()
     {
     }
@@ -24,7 +24,7 @@ public class FireBulletDamage : MonoBehaviour
             main.startSizeMultiplier = particleEffectSize;
             Destroy(effect.gameObject, effect.main.duration); // Destroy effect after it finishes
         }
-
-            Destroy(gameObject); 
+            Instantiate(bulletExplosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }

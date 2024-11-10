@@ -165,3 +165,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75caee529bfc13449b73d9089c7fc057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 10
+  element: 
+  particleEffectSize: 0.1
+  damageEffect: {fileID: 417761080263594739, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
+  bulletExplosionPrefab: {fileID: 5162394677826512515, guid: 41933098b87c1db4ca4e378e69724f05, type: 3}
