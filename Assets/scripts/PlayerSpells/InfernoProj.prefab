@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3895879554351229419}
   - component: {fileID: -1438300666648051658}
   - component: {fileID: 8646974738309138449}
-  - component: {fileID: 5849395393362468296}
+  - component: {fileID: 6805987041457612486}
+  - component: {fileID: 3403821285595432819}
   m_Layer: 0
   m_Name: InfernoProj
   m_TagString: Untagged
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 0.38039216, b: 0, a: 1}
+  m_Sprite: {fileID: -6182518920641396402, guid: 969e5d1368232e64db94eb5ac572ce71, type: 3}
+  m_Color: {r: 0.6150943, g: 0.2850324, b: 0.08239943, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -153,7 +154,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &5849395393362468296
+--- !u!114 &6805987041457612486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,12 +163,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 205615582447164210}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 762f421db24519242a0d8e07622add11, type: 3}
+  m_Script: {fileID: 11500000, guid: 24399bead894a5e408bbb8edb29e8265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfernoCloud: {fileID: 2486899692261699310, guid: ca71c5124a45fdf469ac7803a258b259, type: 3}
+  InfernoCloud: {fileID: 2486899692261699310, guid: 248f6222bfd314a4980faef3bf03d2cf, type: 3}
   damageAmount: 4
-  element: Fire
+  element: 
   particleEffectSize: 0.1
   damageEffect: {fileID: 0}
   duration: 5
+--- !u!95 &3403821285595432819
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205615582447164210}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6c13e6464e548ab428dbb9a0cd2e6df5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

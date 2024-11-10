@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2268826813449250400, guid: b2de1091348bc4adcaede6f262301afb, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.16819096, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   element: Wind
   particleEffectSize: 0.1
   damageEffect: {fileID: 6716933543107358038, guid: 8a334e7c388e77347a1dddd727ef3446, type: 3}
+  ChildBullet: {fileID: 0}
 --- !u!95 &-5781436593089916064
 Animator:
   serializedVersion: 7

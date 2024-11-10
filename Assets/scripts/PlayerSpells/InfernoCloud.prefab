@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 38882813005813504}
   - component: {fileID: 6511315299045014911}
   - component: {fileID: -5844951980797970790}
-  - component: {fileID: -1338077391112363143}
+  - component: {fileID: 4167139738897611319}
+  - component: {fileID: 6608943773076714804}
   m_Layer: 0
   m_Name: InfernoCloud
   m_TagString: Untagged
@@ -78,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2963364867280797781, guid: 3aeef88e48834c64c90f8ceb22bef814, type: 3}
   m_Color: {r: 1, g: 0.28235295, b: 0.23137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,7 +126,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2
---- !u!114 &-1338077391112363143
+--- !u!114 &4167139738897611319
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,14 +135,36 @@ MonoBehaviour:
   m_GameObject: {fileID: 2486899692261699310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29498420445e2764d86d5f9d4192ecc1, type: 3}
+  m_Script: {fileID: 11500000, guid: 01ed34d58a517ca40852856752c479d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 3
-  damageInterval: 0.3
+  damageAmount: 10
+  damageInterval: 1
   element: Fire
   damageEffect: {fileID: 0}
   particleEffectSize: 0.2
   duration: 3
   targetObject: {fileID: 2486899692261699310}
-  childObject: {fileID: 2372965923471614739, guid: a7cf38d8dfc95d94fb576c30c4bc8ef1, type: 3}
+  childObject: {fileID: 2372965923471614739, guid: fcd012d742bb88446afc6ba24968e31b, type: 3}
+--- !u!95 &6608943773076714804
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2486899692261699310}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 890109382b06df046b040042dc73cf13, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

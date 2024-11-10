@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 4080063733432622798, guid: c69cbab8e4b2e4c009b87f6235320220, type: 3}
-  m_Color: {r: 1, g: 0.9043241, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   element: Lightning'
   particleEffectSize: 0.1
   damageEffect: {fileID: 74078499623404260, guid: 9790383d97594f049aecba8cf470e3b7, type: 3}
+  ChildBullet: {fileID: 0}
 --- !u!95 &-4070832149545962127
 Animator:
   serializedVersion: 7
