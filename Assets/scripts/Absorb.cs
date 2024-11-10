@@ -4,32 +4,25 @@ using UnityEngine;
 
 public class Absorb : MonoBehaviour
 {
-    public Color fireColor = Color.red;
-    public Color waterColor = Color.blue;
-    public Color windColor = Color.green;
+    public Color state1Color = Color.red;
+    public Color state2Color = Color.green;
+    public Color state3Color = Color.blue;
 
-    public Queue<string> storedElements = new Queue<string>();  // Queue to store absorbed elements
+    public Queue<string> storedElements = new Queue<string>();
     private SpriteRenderer spriteRenderer;
     private int currentState = 0;  // 0: Fire, 1: Water, 2: Wind
     public string element = "Fire";  // Current element of the player
 
+    public GameObject storedSpellPrefab;
+
     // Elements array to define the order: Fire -> Water -> Wind -> Fire
-    private string[] elements = { "Fire", "Water", "Wind" };
-    private Dictionary<string, Color> elementColors;
+    private string[] elements = { "Fire", "Wind", "Water" };
+    private Color[] elementColors;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        // Define colors for each element
-        elementColors = new Dictionary<string, Color>
-        {
-            { "Fire", fireColor },
-            { "Water", waterColor },
-            { "Wind", windColor }
-        };
-
-        // Initialize the element and color
+        elementColors = new Color[] { state1Color, state2Color, state3Color };
         ChangeColorAndElement(currentState);
     }
 
@@ -38,13 +31,13 @@ public class Absorb : MonoBehaviour
         // Switch to the previous element (Q key)
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            currentState = (currentState - 1 + elements.Length) % elements.Length;
+            currentState = (currentState - 1 + elements.Length) % elements.Length;  // Loop back if going below 0
             ChangeColorAndElement(currentState);
         }
         // Switch to the next element (E key)
         else if (Input.GetKeyDown(KeyCode.E))
         {
-            currentState = (currentState + 1) % elements.Length;
+            currentState = (currentState + 1) % elements.Length;  // Loop back if exceeding max index
             ChangeColorAndElement(currentState);
         }
     }
@@ -53,25 +46,24 @@ public class Absorb : MonoBehaviour
     {
         // Update the element and color based on the current state
         element = elements[state];
-        spriteRenderer.color = elementColors[element];
+        spriteRenderer.color = elementColors[state];
     }
 
-    // Check if player is immune to the incoming attack element
+    // player is immune to the incoming attack element
     public bool IsImmune(string incomingElement)
     {
         return element == incomingElement;
     }
 
-    public void AbsorbElement(string incomingElement)
+    public void addToStoredElements(string incomingElement)
     {
         if (storedElements.Count < 3)
         {
             storedElements.Enqueue(incomingElement);
         }
-        else
+        else if (storedElements.Count == 3)
         {
-            storedElements.Dequeue();
-            storedElements.Enqueue(incomingElement);
+            string dequed = storedElements.Dequeue();
         }
     }
 

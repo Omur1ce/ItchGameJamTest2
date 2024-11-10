@@ -34,7 +34,7 @@ public class SpellDamage : MonoBehaviour
             }
             else
             {
-                player.AbsorbElement(element);
+                player.addToStoredElements(element);
                 Debug.Log("Player is immune to this element!");
             }
 
