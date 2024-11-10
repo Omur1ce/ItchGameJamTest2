@@ -25,6 +25,6 @@ public class FireBulletDamage : MonoBehaviour
             Destroy(effect.gameObject, effect.main.duration); // Destroy effect after it finishes
         }
 
-            Destroy(gameObject); // Destroy the spell after hitting the monster
+            Destroy(gameObject); 
         }
     }

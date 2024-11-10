@@ -1793,7 +1793,7 @@ MonoBehaviour:
   selfHealPrefab: {fileID: 4430131610962368019, guid: b3885c9f6623f4e49877d46d95a5a8ed, type: 3}
   ghostPrefab: {fileID: 0}
   whirlwindPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
-  tornadoPrefab: {fileID: 0}
+  tornadoPrefab: {fileID: 498678120673749305, guid: db71b6581b187ff42992d7cd69490578, type: 3}
   shockwavePrefab: {fileID: 0}
 --- !u!95 &1422396742
 Animator:
