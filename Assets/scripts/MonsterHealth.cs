@@ -13,6 +13,7 @@ public class MonsterHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        
         currentHealth -= amount;
 
 
@@ -20,6 +21,7 @@ public class MonsterHealth : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Debug.Log("about to call die");
             Die();
         }
     }
