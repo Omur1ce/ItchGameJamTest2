@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1844511627347573478}
   - component: {fileID: 7123983741795705022}
   - component: {fileID: -2034622243889043066}
-  m_Layer: 0
+  - component: {fileID: -3389354284883307186}
+  m_Layer: 6
   m_Name: TornadoBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.1895692, g: 0.2679245, b: 0.20880677, a: 1}
+  m_Sprite: {fileID: -2268826813449250400, guid: b2de1091348bc4adcaede6f262301afb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -130,3 +131,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tornadoPrefab: {fileID: 7414600514929315024, guid: 2d94cd25aafbd134bb2a61023ac5219f, type: 3}
   delay: 2
+--- !u!95 &-3389354284883307186
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498678120673749305}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cae9f900a230c46fc9035e5a4f1dc5ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

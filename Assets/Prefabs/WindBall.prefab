@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8252895452959161799}
   - component: {fileID: 700194240109277119}
   - component: {fileID: 2892082598673531402}
+  - component: {fileID: -5781436593089916064}
   m_Layer: 0
   m_Name: WindBall
   m_TagString: Untagged
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -2268826813449250400, guid: b2de1091348bc4adcaede6f262301afb, type: 3}
   m_Color: {r: 0, g: 1, b: 0.16819096, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -169,3 +170,25 @@ MonoBehaviour:
   element: Wind
   particleEffectSize: 0.1
   damageEffect: {fileID: 6716933543107358038, guid: 8a334e7c388e77347a1dddd727ef3446, type: 3}
+--- !u!95 &-5781436593089916064
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5953930710793556825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cae9f900a230c46fc9035e5a4f1dc5ad, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7798960392547423697}
   - component: {fileID: 3060982126896975184}
   - component: {fileID: -8413182115574394429}
+  - component: {fileID: 6541218444789772620}
   m_Layer: 0
   m_Name: WaterBall
   m_TagString: Untagged
@@ -79,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 0.4640296, b: 0.9622642, a: 1}
+  m_Sprite: {fileID: -3122085898744274324, guid: 760565438ce1644969c1170c149b3612, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -169,3 +170,25 @@ MonoBehaviour:
   element: Water
   particleEffectSize: 1
   damageEffect: {fileID: 7022268795503775818, guid: 7377f38a94f13bd43924090d4a77f29e, type: 3}
+--- !u!95 &6541218444789772620
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6333659042308839059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 87ef4d96442ea4103a1e82d4482bb86a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
