@@ -7,15 +7,18 @@ public class Inferno : MonoBehaviour
     public string element = "Fire";
     public ParticleSystem damageEffect;
     public float particleEffectSize = 0.2f;
+
+    public float duration;
     
     public GameObject targetObject;
 
-    public GameObject childObect;
+    public GameObject childObject;
     private float timer;                   // Timer to keep track of damage intervals
 
     void Start()
     {
         timer = damageInterval;
+        Destroy(gameObject, duration);
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -52,9 +55,9 @@ public class Inferno : MonoBehaviour
 
     void OnDestroy()
     {
-        if(childObect != null)
+        if(childObject != null)
         {
-        Instantiate(damageEffect, targetObject.transform.position, Quaternion.identity);
+        Instantiate(childObject, targetObject.transform.position, Quaternion.identity);
         }
     }
 }

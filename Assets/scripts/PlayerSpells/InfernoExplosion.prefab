@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7996622395522801472}
   - component: {fileID: 4292929500992330168}
   - component: {fileID: -7329727817436774639}
-  - component: {fileID: 6301172797216977098}
+  - component: {fileID: 6306635196207699030}
   m_Layer: 0
   m_Name: InfernoExplosion
   m_TagString: Untagged
@@ -125,7 +125,7 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 2
---- !u!114 &6301172797216977098
+--- !u!114 &6306635196207699030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,3 +137,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e263a69b2cc6a294190bb0f814dc7107, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 4
+  effectRadius: 2
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  effectVisual: {fileID: 417761080263594739, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
+  particleEffectSize: 0.5

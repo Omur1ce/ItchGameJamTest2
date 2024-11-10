@@ -2,44 +2,53 @@ using UnityEngine;
 
 
 public class InfernoExplosion : MonoBehaviour
-
-
 {
-    public int damageAmount = 10;
-    public string element;
-    public float particleEffectSize = 0.1f;
-    public ParticleSystem damageEffect; // Assign a particle effect prefab in the inspector
+    public int damageAmount = 20;       // Damage dealt to each enemy in the area
+    public float effectRadius = 3f;     // Radius of the area effect
+    public LayerMask targetLayer;       // Layer mask to specify which objects to affect
+    public ParticleSystem effectVisual; // Optional: Visual effect for the AoE
 
-    public float duration = 0.15f;
-
-    void OnTriggerEnter2D(Collider2D other)
+    public float particleEffectSize;
+    void Start()
     {
-    Absorb player = other.GetComponent<Absorb>();
-        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        // Trigger the area damage effect
+        PerformAreaDamage();
 
-        if (player != null)
+
+
+        // Destroy the spell object immediately
+        Destroy(gameObject);
+    }
+
+    void PerformAreaDamage()
+    {
+        // Find all colliders within the specified radius
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, effectRadius, targetLayer);
+
+        // Loop through each collider and apply damage
+        foreach (Collider2D collider in colliders)
         {
-            if (!player.IsImmune(element))
+            MonsterHealth monsterHealth = collider.GetComponent<MonsterHealth>();
+            if (monsterHealth != null)
             {
-                playerHealth.TakeDamage(damageAmount);
+                monsterHealth.TakeDamage(damageAmount);
+            }
+        }
 
-                // Play damage effect
-                if (damageEffect != null)
-                {
-                    ParticleSystem effect = Instantiate(damageEffect, other.transform.position, Quaternion.identity);
+                // Play effect visuals if assigned
+        if (effectVisual != null)
+        {
+            ParticleSystem effect = Instantiate(effectVisual, transform.position, Quaternion.identity);
                     var main = effect.main;
                     main.startSizeMultiplier = particleEffectSize;
                     Destroy(effect.gameObject, effect.main.duration);
-                
-            }
+        }
     }
-    while(duration >= 0)
-    {
-        duration =- Time.deltaTime;
 
+    void OnDrawGizmosSelected()
+    {
+        // Draw the effect radius in the Scene view for visualization
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, effectRadius);
     }
-    Destroy(gameObject);
 }
-    }
-}
-    

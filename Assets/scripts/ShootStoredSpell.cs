@@ -64,7 +64,7 @@ public class ShootStoredSpell : MonoBehaviour
     {
         if (storedElements.Count != 3)
         {
-            Debug.LogError("SelectSpell requires exactly 3 elements.");
+            Debug.LogError("Select Spell requires exactly 3 elements.");
             return null;
         }
 

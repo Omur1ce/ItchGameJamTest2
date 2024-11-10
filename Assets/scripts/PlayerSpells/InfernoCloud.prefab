@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 38882813005813504}
   - component: {fileID: 6511315299045014911}
   - component: {fileID: -5844951980797970790}
-  - component: {fileID: 3276309888174142319}
+  - component: {fileID: -1338077391112363143}
   m_Layer: 0
   m_Name: InfernoCloud
   m_TagString: Untagged
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.60784316, g: 0.1882353, b: 0.09803922, a: 1}
+  m_Color: {r: 1, g: 0.28235295, b: 0.23137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,8 +124,8 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 1
---- !u!114 &3276309888174142319
+  m_Radius: 2
+--- !u!114 &-1338077391112363143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -137,10 +137,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29498420445e2764d86d5f9d4192ecc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 10
-  damageInterval: 1
+  damageAmount: 3
+  damageInterval: 0.3
   element: Fire
   damageEffect: {fileID: 0}
   particleEffectSize: 0.2
+  duration: 3
   targetObject: {fileID: 2486899692261699310}
-  childObect: {fileID: 2372965923471614739, guid: a7cf38d8dfc95d94fb576c30c4bc8ef1, type: 3}
+  childObject: {fileID: 2372965923471614739, guid: a7cf38d8dfc95d94fb576c30c4bc8ef1, type: 3}
