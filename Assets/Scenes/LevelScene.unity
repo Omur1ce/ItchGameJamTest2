@@ -1041,8 +1041,8 @@ MonoBehaviour:
   geyserPrefab: {fileID: 0}
   selfHealPrefab: {fileID: 4430131610962368019, guid: b3885c9f6623f4e49877d46d95a5a8ed, type: 3}
   ghostPrefab: {fileID: 0}
-  whirlwindPrefab: {fileID: 0}
-  tornadoPrefab: {fileID: 0}
+  whirlwindPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
+  tornadoPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
   shockwavePrefab: {fileID: 0}
 --- !u!95 &1422396742
 Animator:
