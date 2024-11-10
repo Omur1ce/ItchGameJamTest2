@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class SpellDamage : MonoBehaviour
@@ -7,10 +9,12 @@ public class SpellDamage : MonoBehaviour
     public float particleEffectSize = 0.1f;
     public ParticleSystem damageEffect; // Assign a particle effect prefab in the inspector
 
+    public GameObject ChildBullet;
     void Start()
     {
     }
 
+    bool Immune;
     void OnTriggerEnter2D(Collider2D other)
     {
         Absorb player = other.GetComponent<Absorb>();
@@ -30,15 +34,31 @@ public class SpellDamage : MonoBehaviour
                     var main = effect.main;
                     main.startSizeMultiplier = particleEffectSize;
                     Destroy(effect.gameObject, effect.main.duration); // Destroy effect after it finishes
+                    Immune = false;
+                
                 }
             }
             else
             {
-                player.addToStoredElements(element);
+                player.addToStoredElements(element);  
                 Debug.Log("Player is immune to this element!");
+                Debug.Log("absorbed");
+                Immune = true;
+
             }
+           
 
             Destroy(gameObject); // Destroy the spell after hitting the player
+    
         }
     }
+
+    void OnDestroy()
+    {
+        if (ChildBullet != null && Immune == false)
+        {
+            Instantiate(ChildBullet);  // Spawn Children on death.
+        }
+    }
+    
 }

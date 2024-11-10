@@ -3206,8 +3206,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd252213337d34495b84ade7b01825d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  spawnPoints: []
+  enemyPrefabs:
+  - {fileID: 5882373622535377895, guid: b2a581be92e7e4b76b22c4bbf3462a39, type: 3}
+  - {fileID: 3094517796131894067, guid: fb1ade7ef5b0a4047a7ee2bda158eb2c, type: 3}
+  - {fileID: 5336638446427719437, guid: 9c04d249aa19d4dd9b35a2753bcafa8b, type: 3}
+  - {fileID: 8679358292039920119, guid: 8392fef836192416db45bb5c3a660497, type: 3}
+  spawnPoints:
+  - {fileID: 1812587703}
+  - {fileID: 1877270633}
   spawnInterval: 5
 --- !u!1 &1856021535
 GameObject:
