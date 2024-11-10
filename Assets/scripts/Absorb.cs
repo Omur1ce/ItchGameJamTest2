@@ -8,62 +8,48 @@ public class Absorb : MonoBehaviour
     public Color state2Color = Color.green;
     public Color state3Color = Color.blue;
 
-
     public Queue<string> storedElements = new Queue<string>();
     private SpriteRenderer spriteRenderer;
-    private int currentState = 1;
+    private int currentState = 0;  // 0: Fire, 1: Water, 2: Wind
     public string element = "Fire";  // Current element of the player
 
     public GameObject storedSpellPrefab;
 
+    // Elements array to define the order: Fire -> Water -> Wind -> Fire
+    private string[] elements = { "Fire", "Water", "Wind" };
+    private Color[] elementColors;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        elementColors = new Color[] { state1Color, state2Color, state3Color };
         ChangeColorAndElement(currentState);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        // Switch to the previous element (Q key)
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            currentState = 1;
+            currentState = (currentState - 1 + elements.Length) % elements.Length;  // Loop back if going below 0
             ChangeColorAndElement(currentState);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        // Switch to the next element (E key)
+        else if (Input.GetKeyDown(KeyCode.E))
         {
-            currentState = 2;
-            ChangeColorAndElement(currentState);
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            currentState = 3;
+            currentState = (currentState + 1) % elements.Length;  // Loop back if exceeding max index
             ChangeColorAndElement(currentState);
         }
     }
 
     void ChangeColorAndElement(int state)
     {
-        switch (state)
-        {
-            case 1:
-                spriteRenderer.color = state1Color;
-                element = "Fire";
-                break;
-            case 2:
-                spriteRenderer.color = state2Color;
-                element = "Water";
-                break;
-            case 3:
-                spriteRenderer.color = state3Color;
-                element = "Wind";
-                break;
-            default:
-                break;
-        }
+        // Update the element and color based on the current state
+        element = elements[state];
+        spriteRenderer.color = elementColors[state];
     }
 
-    
-    //player is immune to the incoming attack element
+    // player is immune to the incoming attack element
     public bool IsImmune(string incomingElement)
     {
         return element == incomingElement;
@@ -71,18 +57,18 @@ public class Absorb : MonoBehaviour
 
     public void addToStoredElements(string incomingElement)
     {
-        if (storedElements.Count < 3){
+        if (storedElements.Count < 3)
+        {
             storedElements.Enqueue(incomingElement);
         }
-        else if (storedElements.Count == 3){
+        else if (storedElements.Count == 3)
+        {
             string dequed = storedElements.Dequeue();
         }
     }
-    
+
     public void ClearStoredElements()
     {
         storedElements.Clear();
     }
-
-
 }
