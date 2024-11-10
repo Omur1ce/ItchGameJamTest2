@@ -2171,6 +2171,60 @@ RectTransform:
   m_AnchoredPosition: {x: 341, y: -182.0001}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1087370344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1087370346}
+  - component: {fileID: 1087370345}
+  m_Layer: 0
+  m_Name: SpawnPoint3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1087370345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087370344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd252213337d34495b84ade7b01825d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefabs:
+  - {fileID: 5882373622535377895, guid: b2a581be92e7e4b76b22c4bbf3462a39, type: 3}
+  - {fileID: 3094517796131894067, guid: fb1ade7ef5b0a4047a7ee2bda158eb2c, type: 3}
+  - {fileID: 5336638446427719437, guid: 9c04d249aa19d4dd9b35a2753bcafa8b, type: 3}
+  - {fileID: 8679358292039920119, guid: 8392fef836192416db45bb5c3a660497, type: 3}
+  spawnPoints:
+  - {fileID: 1812587703}
+  - {fileID: 1877270633}
+  - {fileID: 1087370346}
+  spawnInterval: 5
+--- !u!4 &1087370346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087370344}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7, y: 4, z: -0.0027778582}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1115727676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,6 +2905,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1592968462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592968463}
+  m_Layer: 0
+  m_Name: reset scene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1592968463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592968462}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.924467, y: 4.525534, z: -0.2939008}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626051277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,8 +3291,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd252213337d34495b84ade7b01825d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefabs: []
-  spawnPoints: []
+  enemyPrefabs:
+  - {fileID: 5882373622535377895, guid: b2a581be92e7e4b76b22c4bbf3462a39, type: 3}
+  - {fileID: 3094517796131894067, guid: fb1ade7ef5b0a4047a7ee2bda158eb2c, type: 3}
+  - {fileID: 5336638446427719437, guid: 9c04d249aa19d4dd9b35a2753bcafa8b, type: 3}
+  - {fileID: 8679358292039920119, guid: 8392fef836192416db45bb5c3a660497, type: 3}
+  spawnPoints:
+  - {fileID: 1812587703}
+  - {fileID: 1877270633}
+  - {fileID: 1087370346}
   spawnInterval: 5
 --- !u!1 &1856021535
 GameObject:
@@ -3352,6 +3444,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 1812587703}
   - {fileID: 1877270633}
+  - {fileID: 1087370346}
   spawnInterval: 5
 --- !u!4 &1877270633
 Transform:
@@ -3995,8 +4088,10 @@ SceneRoots:
   - {fileID: 1296510621}
   - {fileID: 1812587703}
   - {fileID: 1877270633}
+  - {fileID: 1087370346}
   - {fileID: 1856021539}
   - {fileID: 1926785727}
   - {fileID: 1779814437}
   - {fileID: 2051197437}
   - {fileID: 1132383443}
+  - {fileID: 1592968463}
