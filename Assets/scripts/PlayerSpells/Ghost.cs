@@ -3,27 +3,47 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public Movemont script;  // Reference to the player's movement script
+    public float boostedSpeed = 10f;        // Temporary boosted speed
+    public float originalSpeed = 5f;        // Original speed to revert to
+    public float boostDuration = 5f;        // Duration of the speed boost
 
-    private float originalSpeed = 5f;  // Original speed to revert to
-    private float boostedSpeed = 10f;  // Temporary boosted speed
-    private float boostDuration = 5f;  // Duration of the speed boost
+    private Movemont playerMovement;        // Reference to the player's Movemont script
 
     void Start()
     {
-        // Start the speed boost when the script is activated
-        StartCoroutine(TemporarySpeedBoost());
+        // Find the player object by tag (make sure the player has the "Player" tag)
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        // Check if the player was found and has the Movemont script
+        if (player != null)
+        {
+            playerMovement = player.GetComponent<Movemont>();
+
+            if (playerMovement != null)
+            {
+                // Start the speed boost
+                StartCoroutine(TemporarySpeedBoost());
+            }
+            else
+            {
+                Debug.LogError("Movemont script not found on player!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Player object not found!");
+        }
     }
 
     private IEnumerator TemporarySpeedBoost()
     {
         // Set the player's speed to the boosted speed
-        script.moveSpeed = boostedSpeed;
+        playerMovement.moveSpeed = boostedSpeed;
 
         // Wait for the specified boost duration
         yield return new WaitForSeconds(boostDuration);
 
         // Revert the player's speed to the original speed
-        script.moveSpeed = originalSpeed;
+        playerMovement.moveSpeed = originalSpeed;
     }
 }
