@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5969010844677641736}
   - component: {fileID: 8484114434500132141}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6978831691872520671}
   - component: {fileID: 3466566079201850564}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Heal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,6 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d37fcdc7d63ccfc46bab98f1c38a54b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healAmount: 20
+  destroyDelay: 1
 --- !u!1 &9037750947142571113
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +145,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3192497383153490501}
   - component: {fileID: 872337281170417300}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
