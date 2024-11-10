@@ -825,7 +825,7 @@ GameObject:
   - component: {fileID: 1422396740}
   - component: {fileID: 1422396741}
   - component: {fileID: 1422396742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -1034,7 +1034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellSpeed: 10
   script: {fileID: 1422396732}
-  fireballPrefab: {fileID: 3522101237163623635, guid: 71a6c9a8726238e4597c4c8804abd968, type: 3}
+  fireballPrefab: {fileID: 750389516126894091, guid: 29bb7b23697fe7f4eb1c11fdce7e670b, type: 3}
   summonMageInternsPrefab: {fileID: 0}
   fireWhirlwindPrefab: {fileID: 0}
   waterWallPrefab: {fileID: 0}
@@ -1105,7 +1105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1812587702}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd252213337d34495b84ade7b01825d9, type: 3}
   m_Name: 
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1877270631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bd252213337d34495b84ade7b01825d9, type: 3}
   m_Name: 
