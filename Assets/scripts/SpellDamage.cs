@@ -21,6 +21,7 @@ public class SpellDamage : MonoBehaviour
             if (!player.IsImmune(element))
             {
                 playerHealth.TakeDamage(damageAmount);
+                Debug.Log("Player took Damage!");
 
                 // Play damage effect
                 if (damageEffect != null)
@@ -34,7 +35,7 @@ public class SpellDamage : MonoBehaviour
             else
             {
                 player.addToStoredElements(element);
-                Debug.Log("absorbed");
+                Debug.Log("Player is immune to this element!");
             }
 
             Destroy(gameObject); // Destroy the spell after hitting the player
