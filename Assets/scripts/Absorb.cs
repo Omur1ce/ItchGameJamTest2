@@ -16,7 +16,7 @@ public class Absorb : MonoBehaviour
     public GameObject storedSpellPrefab;
 
     // Elements array to define the order: Fire -> Water -> Wind -> Fire
-    private string[] elements = { "Fire", "Water", "Wind" };
+    private string[] elements = { "Fire", "Wind", "Water" };
     private Color[] elementColors;
 
     void Start()
