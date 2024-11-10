@@ -3,14 +3,20 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject[] enemyPrefabs;  // Array to hold the enemy types
-    public Transform[] spawnPoints;    // Array to hold possible spawn locations
-    public float spawnInterval = 5f;   // Time in seconds between spawns
+    public GameObject[] enemyPrefabs;  
+    public Transform[] spawnPoints;    
+    public float initialSpawnInterval = 5f;  
+    public float minimumSpawnInterval = 1f;  
+    public float spawnIntervalDecreaseRate = 0.1f; 
 
-    private Transform player; 
+    private float currentSpawnInterval;  
+    private int maxSpawnRange = 1;  
+    private int totalSpawnPoints;  
+
     private void Start()
     {
-        // Start the spawn loop
+        currentSpawnInterval = initialSpawnInterval;
+        totalSpawnPoints = spawnPoints.Length;
         StartCoroutine(SpawnEnemies());
     }
 
@@ -18,19 +24,17 @@ public class EnemySpawner : MonoBehaviour
     {
         while (true)
         {
-            
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(currentSpawnInterval);
 
-            // Choose a random enemy type
             GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
 
+            maxSpawnRange = Mathf.Min(totalSpawnPoints, maxSpawnRange + 1);
 
-            // Choose a random spawn point
-            Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Transform spawnPoint = spawnPoints[Random.Range(0, maxSpawnRange)];
 
-            // Spawn the enemy at the chosen spawn point
             Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
-            
+
+            currentSpawnInterval = Mathf.Max(currentSpawnInterval - spawnIntervalDecreaseRate, minimumSpawnInterval);
         }
     }
 }
