@@ -1785,15 +1785,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellSpeed: 10
   script: {fileID: 1422396732}
-  fireballPrefab: {fileID: 750389516126894091, guid: 29bb7b23697fe7f4eb1c11fdce7e670b, type: 3}
+  fireballPrefab: {fileID: 3522101237163623635, guid: 71a6c9a8726238e4597c4c8804abd968, type: 3}
   summonMageInternsPrefab: {fileID: 0}
   fireWhirlwindPrefab: {fileID: 0}
-  waterWallPrefab: {fileID: 0}
+  waterWallPrefab: {fileID: 5871586707586151723, guid: 14b5feeaffaa9e741915d6ad52b8eb8a, type: 3}
   geyserPrefab: {fileID: 0}
   selfHealPrefab: {fileID: 4430131610962368019, guid: b3885c9f6623f4e49877d46d95a5a8ed, type: 3}
   ghostPrefab: {fileID: 0}
   whirlwindPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
-  tornadoPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
+  tornadoPrefab: {fileID: 0}
   shockwavePrefab: {fileID: 0}
 --- !u!95 &1422396742
 Animator:

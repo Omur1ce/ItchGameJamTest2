@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Whirlwind : MonoBehaviour
 {
-    public int damageAmount = 10;           // Damage dealt per hit
+    public int damageAmount = 0;           // Damage dealt per hit
     public float pushForce = 5f;            // Force to push enemies away
     public float particleEffectSize = 0.1f;
     public ParticleSystem damageEffect;     // Assign a particle effect prefab in the inspector
@@ -18,7 +18,6 @@ public class Whirlwind : MonoBehaviour
 
         if (monsterHealth != null)
         {
-            // Deal damage to the enemy
             monsterHealth.TakeDamage(damageAmount);
 
             // Apply a push force to the enemy if they have a Rigidbody2D
@@ -37,7 +36,6 @@ public class Whirlwind : MonoBehaviour
                 Destroy(effect.gameObject, effect.main.duration); // Destroy effect after it finishes
             }
 
-            // Destroy the spell after hitting the monster
             Destroy(gameObject);
         }
     }
