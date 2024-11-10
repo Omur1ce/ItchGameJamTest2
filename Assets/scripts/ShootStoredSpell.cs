@@ -108,10 +108,14 @@ public class ShootStoredSpell : MonoBehaviour
 
         if (selectedSpell != null)
         {
-            GameObject spellProjectile = Instantiate(selectedSpell, transform.position, Quaternion.identity);
-
             Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 direction = (mousePosition - transform.position).normalized;
+
+            // Calculate the angle in degrees
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Instantiate the spell and rotate it to point towards the mouse
+            GameObject spellProjectile = Instantiate(selectedSpell, transform.position, Quaternion.Euler(0, 0, angle));
 
             Rigidbody2D rb = spellProjectile.GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -126,4 +130,6 @@ public class ShootStoredSpell : MonoBehaviour
             Debug.Log("No spell stored to shoot!");
         }
     }
+
 }
+
