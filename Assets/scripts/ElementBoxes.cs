@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ElementBoxes : MonoBehaviour
+public class AbsorbUI : MonoBehaviour
 {
     public Absorb absorbScript;             // Reference to the Absorb script to track stored elements
     public List<Image> elementSlots;        // List of Image components to represent each element slot
@@ -32,7 +32,7 @@ public class ElementBoxes : MonoBehaviour
         // Check if all element slots are filled, then clear if full
         if (absorbScript.storedElements.Count >= elementSlots.Count)
         {
-            //absorbScript.ClearStoredElements();
+            absorbScript.ClearStoredElements();
             SetDefaultSprites();
         }
         else
