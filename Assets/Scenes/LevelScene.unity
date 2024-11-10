@@ -1523,7 +1523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1422396737}
-  startZoom: 2
+  startZoom: 10
   targetZoom: 10
   zoomSpeed: 0.02
   offset: {x: 0, y: 0, z: -10}
@@ -2807,7 +2807,7 @@ GameObject:
   - component: {fileID: 1422396740}
   - component: {fileID: 1422396741}
   - component: {fileID: 1422396742}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -3020,12 +3020,12 @@ MonoBehaviour:
   summonMageInternsPrefab: {fileID: 0}
   fireWhirlwindPrefab: {fileID: 0}
   waterWallPrefab: {fileID: 5871586707586151723, guid: 14b5feeaffaa9e741915d6ad52b8eb8a, type: 3}
-  geyserPrefab: {fileID: 0}
+  geyserPrefab: {fileID: 5436425693672709266, guid: 2867b5b5f0cb525418475f879c5b3385, type: 3}
   selfHealPrefab: {fileID: 4430131610962368019, guid: b3885c9f6623f4e49877d46d95a5a8ed, type: 3}
   ghostPrefab: {fileID: 0}
   whirlwindPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
   tornadoPrefab: {fileID: 498678120673749305, guid: db71b6581b187ff42992d7cd69490578, type: 3}
-  shockwavePrefab: {fileID: 0}
+  shockwavePrefab: {fileID: 6239800861003737284, guid: 04230eab0153bab4888f899a851037e0, type: 3}
 --- !u!95 &1422396742
 Animator:
   serializedVersion: 7

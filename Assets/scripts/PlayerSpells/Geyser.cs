@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class Geyser : MonoBehaviour
 {
-    public int damageAmount = 20;         
-    public float effectRadius = 3f;       
-    public LayerMask targetLayer;         
-    public ParticleSystem effectVisual;   
+    public int damageAmount = 20;
+    public float effectRadius = 3f;
+    public LayerMask targetLayer;
+    public ParticleSystem effectVisual;
 
-    //private float delay = 1f;             // Delay before damage is applied
+    private float delay = 1f;             // Delay before damage is applied
 
     void Start()
     {
-
+        Invoke(nameof(PerformAreaDamage), delay);
     }
 
     void PerformAreaDamage()
