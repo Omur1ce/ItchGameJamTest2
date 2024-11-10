@@ -99,7 +99,6 @@ public class ShootStoredSpell : MonoBehaviour
             return spellPrefabs[spellType.Value];
         }
 
-        Debug.LogError("No matching spell found for the given elements.");
         return null;
     }
 
