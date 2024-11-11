@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
 
+    public GameObject damageEffectPrefab; 
+
     public GameObject gameOverUI; 
 
     void Start()
@@ -19,6 +21,11 @@ public class PlayerHealth : MonoBehaviour
 
 
         currentHealth = Mathf.Max(currentHealth, 0);
+
+        if (damageEffectPrefab != null)
+        {
+            Instantiate(damageEffectPrefab, transform.position, Quaternion.identity);
+        }
 
         if (currentHealth <= 0)
         {
