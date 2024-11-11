@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84bac7d6f8854254cba223850c69ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 15
+  damageAmount: 20
   element: Fire
   particleEffectSize: 0.1
   damageEffect: {fileID: 417761080263594739, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
