@@ -3,13 +3,13 @@ using UnityEngine;
 public class Tornado : MonoBehaviour
 {
     public float pullRadius = 5f;             // Radius within which objects are pulled
-    public float pullForce = 10f;             // Strength of the pull force
-    public float duration = 2f;               // Duration the spell stays active
+    public float pullForce = 5;             // Strength of the pull force
+    public float duration = 0.5f;               // Duration the spell stays active
     public LayerMask pullableLayers;          // Layers to affect (e.g., Enemy, Rigidbodies)
 
     void Start()
     {
-        // Automatically destroy the spell object after its duration
+
         Destroy(gameObject, duration);
     }
 
@@ -32,15 +32,6 @@ public class Tornado : MonoBehaviour
             }
         }
     }
-
-    void OnDrawGizmosSelected()
-    {
-        // Draw the radius of the pull area for visualization in the editor
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, pullRadius);
-    }
-
-
     private void OnDestroy()
     {
         
