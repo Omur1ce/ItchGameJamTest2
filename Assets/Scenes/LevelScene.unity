@@ -4159,6 +4159,10 @@ MonoBehaviour:
   initialSpawnInterval: 5
   minimumSpawnInterval: 1
   spawnIntervalDecreaseRate: 0.1
+  initialEnemiesPerSpawn: 1
+  maxEnemiesPerSpawn: 5
+  enemiesPerSpawnIncreaseRate: 0.02
+  initialDelay: 0.1
 --- !u!1 &1856021535
 GameObject:
   m_ObjectHideFlags: 0

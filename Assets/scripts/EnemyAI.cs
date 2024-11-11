@@ -18,16 +18,10 @@ public class EnemyAI : MonoBehaviour
     private float distance;
 
     void Start(){
-            Debug.Log("Looking for player");
             GameObject playerObject = GameObject.FindWithTag("Player");
             if (playerObject != null)
             {
                 player = playerObject.transform;
-                Debug.Log("Player assigned to player in EnemyAI.");
-            }
-            else
-            {
-                Debug.LogWarning("Player not found with tag 'Player'.");
             }
         
     }
