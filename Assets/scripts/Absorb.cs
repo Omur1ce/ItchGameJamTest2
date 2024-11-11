@@ -59,13 +59,19 @@ public class Absorb : MonoBehaviour
     {
         if (storedElements.Count < 3)
         {
+            // Add the element if there's room
             storedElements.Enqueue(incomingElement);
         }
         else if (storedElements.Count == 3)
         {
-            string dequed = storedElements.Dequeue();
+            // Remove the oldest element
+            storedElements.Dequeue();
+
+            // Add the new element to the queue
+            storedElements.Enqueue(incomingElement);
         }
     }
+
 
     public void ClearStoredElements()
     {
