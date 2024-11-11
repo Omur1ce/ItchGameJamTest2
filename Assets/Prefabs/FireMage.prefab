@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5426079263936075093}
   - component: {fileID: 7081932300966074599}
   - component: {fileID: 4169345532399819843}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2576667817835497863}
   - component: {fileID: 937923274794179985}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

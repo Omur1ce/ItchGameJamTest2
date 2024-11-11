@@ -104,13 +104,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e840daee8ac1666418669253cd469594, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cloudPrefab: {fileID: 0}
+  cloudPrefab: {fileID: 6033479226724273478}
   damagePerTick: 5
   tickInterval: 1
   effectRadius: 3
   targetLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   duration: 5
 --- !u!50 &6924964994418884156
 Rigidbody2D:

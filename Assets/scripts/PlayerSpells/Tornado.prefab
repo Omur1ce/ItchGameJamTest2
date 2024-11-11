@@ -164,7 +164,7 @@ MonoBehaviour:
   duration: 2
   pullableLayers:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
 --- !u!95 &8610277488016117085
 Animator:
   serializedVersion: 7

@@ -191,7 +191,7 @@ MonoBehaviour:
   effectRadius: 3
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   effectVisual: {fileID: 0}
 --- !u!58 &-4833189798076547198
 CircleCollider2D:

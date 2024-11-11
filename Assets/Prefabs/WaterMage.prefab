@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6887038562941775332}
   - component: {fileID: 8527160586688904389}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 7130048181240093869}
   - component: {fileID: 5013748121661346015}
   - component: {fileID: 1254789101056917336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WaterMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2649518077725012449}
   - component: {fileID: 314841335538772658}
   - component: {fileID: 49810043014621040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LightningMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6287957662472254772}
   - component: {fileID: 7975622721245665240}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

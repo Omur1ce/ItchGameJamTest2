@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5483372407482751943}
   - component: {fileID: 7841658314524234825}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5398202272019640152}
   - component: {fileID: 5752590904002872817}
   - component: {fileID: -4593112984037260177}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WindMage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
