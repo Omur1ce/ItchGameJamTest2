@@ -107,10 +107,10 @@ MonoBehaviour:
   spellPrefab: {fileID: 5953930710793556825, guid: 29e2ce7634a745c4abdbe2d3f5688476, type: 3}
   player: {fileID: 0}
   spellSpeed: 5
-  shootingInterval: 2
-  spellLifetime: 3
-  speed: 3
-  stoppingDistance: 5
+  shootingInterval: 1.5
+  spellLifetime: 1.5
+  speed: 5.5
+  stoppingDistance: 2
 --- !u!61 &6843658258298570939
 BoxCollider2D:
   m_ObjectHideFlags: 0

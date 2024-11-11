@@ -1,0 +1,82 @@
+using UnityEngine;
+
+public class EnemyAICopy : MonoBehaviour
+{
+    public GameObject spellPrefab;
+    public Transform player;
+    public float spellSpeed = 5f;
+    public float shootingInterval = 2f;
+    public float spellLifetime = 3f;
+
+    private float shootTimer;
+
+    public float speed = 3f; 
+    public float stoppingDistance = 1.5f; 
+
+    public float Range = 2f;
+
+    private Vector2 direction;
+
+    private float distance;
+
+    void Start(){
+            Debug.Log("Looking for player");
+            GameObject playerObject = GameObject.FindWithTag("Player");
+            if (playerObject != null)
+            {
+                player = playerObject.transform;
+                Debug.Log("Player assigned to player in EnemyAI.");
+            }
+            else
+            {
+                Debug.LogWarning("Player not found with tag 'Player'.");
+            }
+        
+    }
+
+    void Update()
+    {
+
+        if (player == null) return; 
+
+        
+        direction = (player.position - transform.position).normalized;
+
+
+        distance = Vector2.Distance(transform.position, player.position);
+
+
+        if (distance > stoppingDistance)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        }
+
+
+        if (distance < Range) {
+            shootTimer += Time.deltaTime;
+
+            if (shootTimer >= shootingInterval)
+            {
+            ShootAtPlayer();
+            shootTimer = 0f;
+            }
+        }
+
+    }
+
+
+
+    public void ShootAtPlayer()
+    {
+        
+
+        GameObject spell = Instantiate(spellPrefab, transform.position, Quaternion.identity);
+
+        Vector2 direction = (player.position - transform.position).normalized;
+
+        Rigidbody2D rb = spell.GetComponent<Rigidbody2D>();
+        rb.linearVelocity = direction * spellSpeed;
+        Destroy(spell, spellLifetime);
+    }
+
+}

@@ -106,11 +106,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellPrefab: {fileID: 750389516126894091, guid: 29bb7b23697fe7f4eb1c11fdce7e670b, type: 3}
   player: {fileID: 0}
-  spellSpeed: 5
+  spellSpeed: 3.5
   shootingInterval: 2
-  spellLifetime: 3
+  spellLifetime: 10
   speed: 3
-  stoppingDistance: 5
+  stoppingDistance: 4
 --- !u!61 &3513683288862396763
 BoxCollider2D:
   m_ObjectHideFlags: 0
