@@ -29,11 +29,9 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        // Initial quick spawn
         yield return new WaitForSeconds(initialDelay);
         SpawnEnemyWave();
 
-        // Regular spawning loop
         while (true)
         {
             yield return new WaitForSeconds(currentSpawnInterval);
@@ -44,7 +42,7 @@ public class EnemySpawner : MonoBehaviour
             currentSpawnInterval = Mathf.Max(currentSpawnInterval - spawnIntervalDecreaseRate, minimumSpawnInterval);
 
             // Increase the number of enemies per spawn, up to the maximum
-            currentEnemiesPerSpawn = Mathf.Min(maxEnemiesPerSpawn, currentEnemiesPerSpawn + Mathf.CeilToInt(enemiesPerSpawnIncreaseRate));
+            currentEnemiesPerSpawn = 1;
         }
     }
 
