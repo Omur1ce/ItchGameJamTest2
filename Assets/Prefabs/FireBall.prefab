@@ -170,7 +170,7 @@ MonoBehaviour:
   damageAmount: 20
   element: Fire
   particleEffectSize: 0.1
-  damageEffect: {fileID: 417761080263594739, guid: 7800b8f6b712bfe49bd663eeb3ebe1e4, type: 3}
+  damageEffect: {fileID: 0}
   ChildBullet: {fileID: 0}
 --- !u!95 &8612239022682935837
 Animator:

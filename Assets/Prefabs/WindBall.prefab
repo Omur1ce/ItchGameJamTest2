@@ -254,7 +254,7 @@ MonoBehaviour:
   damageAmount: 5
   element: Wind
   particleEffectSize: 0.1
-  damageEffect: {fileID: 6716933543107358038, guid: 8a334e7c388e77347a1dddd727ef3446, type: 3}
+  damageEffect: {fileID: 0}
   ChildBullet: {fileID: 0}
 --- !u!95 &-5781436593089916064
 Animator:

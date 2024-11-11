@@ -170,7 +170,7 @@ MonoBehaviour:
   damageAmount: 10
   element: Lightning'
   particleEffectSize: 0.1
-  damageEffect: {fileID: 74078499623404260, guid: 9790383d97594f049aecba8cf470e3b7, type: 3}
+  damageEffect: {fileID: 0}
   ChildBullet: {fileID: 0}
 --- !u!95 &-4070832149545962127
 Animator:
