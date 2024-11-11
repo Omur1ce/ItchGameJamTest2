@@ -534,7 +534,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -542,7 +542,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &65735815
@@ -963,7 +963,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -971,7 +971,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &316341146
@@ -1233,7 +1233,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1241,7 +1241,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &375906458
@@ -3547,15 +3547,15 @@ MonoBehaviour:
   spellSpeed: 10
   script: {fileID: 1422396732}
   fireballPrefab: {fileID: 3522101237163623635, guid: 71a6c9a8726238e4597c4c8804abd968, type: 3}
-  summonMageInternsPrefab: {fileID: 0}
-  fireWhirlwindPrefab: {fileID: 0}
+  summonMageInternsPrefab: {fileID: 6033479226724273478, guid: 0929e62c096de8e4fae5848734eae9f1, type: 3}
+  fireWhirlwindPrefab: {fileID: 205615582447164210, guid: 0bfa121109d158a40a7355211a64ab9d, type: 3}
   waterWallPrefab: {fileID: 5871586707586151723, guid: 14b5feeaffaa9e741915d6ad52b8eb8a, type: 3}
   geyserPrefab: {fileID: 5436425693672709266, guid: 2867b5b5f0cb525418475f879c5b3385, type: 3}
   selfHealPrefab: {fileID: 4430131610962368019, guid: b3885c9f6623f4e49877d46d95a5a8ed, type: 3}
-  ghostPrefab: {fileID: 0}
+  ghostPrefab: {fileID: 1198933743715563455, guid: c10f9e38c3e24a845941ba86f2df4664, type: 3}
   whirlwindPrefab: {fileID: 2198586401787446144, guid: 1d074fb412062a84087f715f14888e50, type: 3}
   tornadoPrefab: {fileID: 498678120673749305, guid: db71b6581b187ff42992d7cd69490578, type: 3}
-  shockwavePrefab: {fileID: 6239800861003737284, guid: 04230eab0153bab4888f899a851037e0, type: 3}
+  shockwavePrefab: {fileID: 8314427971809927116, guid: 04230eab0153bab4888f899a851037e0, type: 3}
 --- !u!95 &1422396742
 Animator:
   serializedVersion: 7
@@ -4773,7 +4773,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4781,7 +4781,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2050085902
