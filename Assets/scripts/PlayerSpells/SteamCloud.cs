@@ -3,57 +3,47 @@ using UnityEngine;
 
 public class SteamCloud : MonoBehaviour
 {
-    public GameObject cloudPrefab;
-    public int damagePerTick = 10;          // Damage dealt per tick
-    public float tickInterval = 0.2f;        // Time interval between each damage tick
-    public float effectRadius = 3f;        // Radius of the cloud effect
-    public LayerMask targetLayer;          // Layer mask for which objects are affected (e.g., enemies)
-    public float duration = 5f;            // Duration the cloud lasts in the air
+    public int damageAmount = 20;
+    public float damageInterval = 1f;
+    public string element = "Water";
+    public ParticleSystem damageEffect;
+    public float particleEffectSize = 0.1f;
 
-    private void Start()
+    private float timer;           // Timer to keep track of damage intervals
+
+    void Start()
     {
-        // Instantiate the cloud prefab at the current position
-        Instantiate(cloudPrefab, transform.position, Quaternion.identity);
-
-        // Start the cloud damage-over-time effect
-        StartCoroutine(DamageOverTime());
-
-        // Destroy the SteamCloud object after its duration
-        Destroy(gameObject, duration);
+        timer = damageInterval;
     }
 
-    private IEnumerator DamageOverTime()
+    void OnTriggerStay2D(Collider2D other)
     {
-        float elapsedTime = 0f;
+        MonsterHealth monsterHealth = other.GetComponent<MonsterHealth>();
 
-        // While the cloud is active
-        while (elapsedTime < duration)
+        if (monsterHealth != null)
         {
-            // Find all colliders within the effect radius
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, effectRadius, targetLayer);
-
-            // Apply damage to each enemy within the radius
-            foreach (Collider2D collider in colliders)
+            timer -= Time.deltaTime;
+            if (timer <= 0f)
             {
-                MonsterHealth monsterHealth = collider.GetComponent<MonsterHealth>();
-                if (monsterHealth != null)
+                monsterHealth.TakeDamage(damageAmount);
+                timer = damageInterval;
+
+                if (damageEffect != null)
                 {
-                    monsterHealth.TakeDamage(damagePerTick);
+                    ParticleSystem effect = Instantiate(damageEffect, other.transform.position, Quaternion.identity);
+                    var main = effect.main;
+                    main.startSizeMultiplier = particleEffectSize;
+                    Destroy(effect.gameObject, effect.main.duration);
                 }
             }
-
-            // Wait for the tick interval before applying damage again
-            yield return new WaitForSeconds(tickInterval);
-
-            // Increment the elapsed time by the tick interval
-            elapsedTime += tickInterval;
         }
     }
 
-    void OnDrawGizmosSelected()
+    void OnTriggerExit2D(Collider2D other)
     {
-        // Draw the effect radius in the Scene view for visualization
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, effectRadius);
+        if (other.GetComponent<MonsterHealth>() != null)
+        {
+            timer = damageInterval;
+        }
     }
 }
