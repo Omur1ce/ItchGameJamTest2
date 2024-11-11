@@ -5,7 +5,9 @@ public class EnemySpawner : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;  
     public Transform[] spawnPoints;    
-    public float initialSpawnInterval = 5f;  
+    public float initialSpawnInterval = 5f; 
+    public GameObject spawnEffectPrefab; 
+ 
     public float minimumSpawnInterval = 1f;  
     public float spawnIntervalDecreaseRate = 0.1f; 
     public int initialEnemiesPerSpawn = 1;  
@@ -53,6 +55,11 @@ public class EnemySpawner : MonoBehaviour
             GameObject enemyToSpawn = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
             Transform spawnPoint = spawnPoints[Random.Range(0, totalSpawnPoints)];
             Instantiate(enemyToSpawn, spawnPoint.position, spawnPoint.rotation);
+
+            if (spawnEffectPrefab != null)
+            {
+                Instantiate(spawnEffectPrefab, spawnPoint.position, Quaternion.identity);
+            }
         }
     }
 }
