@@ -267,7 +267,6 @@ GameObject:
   m_Component:
   - component: {fileID: 68769534}
   - component: {fileID: 68769536}
-  - component: {fileID: 68769535}
   m_Layer: 0
   m_Name: SoundTracker
   m_TagString: Untagged
@@ -290,21 +289,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &68769535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68769533}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15ae6b5c339af9a48b64aa624abcaefb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 68769536}
-  mainMenuMusic: {fileID: 8300000, guid: 3cfb24f7ba721a44a9b85c6160e1bbc2, type: 3}
-  gameplayMusic: {fileID: 8300000, guid: 2888912a3f7d0144eacd0d9870d5b8ae, type: 3}
 --- !u!82 &68769536
 AudioSource:
   m_ObjectHideFlags: 0
@@ -315,12 +299,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a2ca4c9119627e6438a183b7543a1b1c, type: 3}
+  m_Resource: {fileID: 8300000, guid: a2ca4c9119627e6438a183b7543a1b1c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.233
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -567,7 +551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d352f865ee704a2da08c823b932c01f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundtrackManager: {fileID: 68769535}
+  soundtrackManager: {fileID: 0}
 --- !u!4 &569655411
 Transform:
   m_ObjectHideFlags: 0
