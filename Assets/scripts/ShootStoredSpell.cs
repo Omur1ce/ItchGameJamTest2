@@ -20,6 +20,7 @@ public class ShootStoredSpell : MonoBehaviour
     public GameObject shockwavePrefab;
 
     private Dictionary<SpellType, GameObject> spellPrefabs;
+    public GameObject memorisedSpell;
 
     void Awake()
     {
@@ -44,6 +45,10 @@ public class ShootStoredSpell : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             ShootSpell();
+        }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            MemoriseSpell();
         }
     }
 
@@ -131,6 +136,46 @@ public class ShootStoredSpell : MonoBehaviour
         else
         {
             Debug.Log("No spell stored to shoot!");
+        }
+    }
+
+    void MemoriseSpell()
+    {
+        if (memorisedSpell == null)
+        {
+            // Memorise the spell and clear stored elements
+            memorisedSpell = SelectSpell(script.storedElements);
+            if (memorisedSpell != null)
+            {
+                script.ClearStoredElements();
+                Debug.Log("Spell memorised!");
+            }
+            else
+            {
+                Debug.Log("No spell available to memorise!");
+            }
+        }
+        else
+        {
+            // Fire the memorised spell
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (mousePosition - transform.position).normalized;
+
+            // Calculate the angle in degrees
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Instantiate the spell and rotate it to point towards the mouse
+            GameObject spellProjectile = Instantiate(memorisedSpell, transform.position, Quaternion.Euler(0, 0, angle));
+
+            Rigidbody2D rb = spellProjectile.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = direction * spellSpeed;
+            }
+
+            // Clear memorised spell after shooting
+            memorisedSpell = null;
+            Debug.Log("Spell fired!");
         }
     }
 

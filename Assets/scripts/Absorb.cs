@@ -64,12 +64,12 @@ public class Absorb : MonoBehaviour
         {
 
             // Add the element if there's room
-            audioSource.PlayOneShot(absorbSFX);
+            //audioSource.PlayOneShot(absorbSFX);
             storedElements.Enqueue(incomingElement);
         }
         else if (storedElements.Count == 3)
         {
-            audioSource.PlayOneShot(absorbSFX);
+            //audioSource.PlayOneShot(absorbSFX);
             // Remove the oldest element
             storedElements.Dequeue();
 

@@ -41,8 +41,6 @@ public class SpellDamage : MonoBehaviour
             {
 
                 player.addToStoredElements(element);  
-                Debug.Log("Player is immune to this element!");
-                Debug.Log("absorbed");
                 Immune = true;
 
             }

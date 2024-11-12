@@ -29,7 +29,7 @@ public class Geyser : MonoBehaviour
             }
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, 1f);
     }
 
     void OnDrawGizmosSelected()
