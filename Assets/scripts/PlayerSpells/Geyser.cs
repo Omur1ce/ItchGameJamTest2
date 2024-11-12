@@ -7,7 +7,7 @@ public class Geyser : MonoBehaviour
     public LayerMask targetLayer;
     public ParticleSystem effectVisual;
 
-    private float delay = 1f;             // Delay before damage is applied
+    private float delay = 0f;             // Delay before damage is applied
 
     void Start()
     {

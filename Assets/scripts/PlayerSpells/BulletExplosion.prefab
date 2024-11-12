@@ -104,5 +104,5 @@ MonoBehaviour:
   effectRadius: 3
   targetLayer:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 257
   effectVisual: {fileID: 0}

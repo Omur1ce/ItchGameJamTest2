@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ShootStoredSpell : MonoBehaviour
@@ -68,32 +69,34 @@ public class ShootStoredSpell : MonoBehaviour
             return null;
         }
 
-        List<string> elements = new List<string>(storedElements);
+        // Count each element's occurrences
+        var elementCounts = storedElements.GroupBy(element => element)
+                                          .ToDictionary(group => group.Key, group => group.Count());
 
-        HashSet<string> elementsSet = new HashSet<string>(storedElements);
         SpellType? spellType = null;
 
-        if (elementsSet.SetEquals(new HashSet<string> { "Fire", "Fire", "Fire" }))
+        if (elementCounts.TryGetValue("Fire", out int fireCount) && fireCount == 3)
             spellType = SpellType.Fireball;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Fire", "Fire", "Water" }))
+        else if (fireCount == 2 && elementCounts.GetValueOrDefault("Water") == 1)
             spellType = SpellType.SummonMageInterns;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Fire", "Fire", "Wind" }))
+        else if (fireCount == 2 && elementCounts.GetValueOrDefault("Wind") == 1)
             spellType = SpellType.FireWhirlwind;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Water", "Fire" }))
+        else if (elementCounts.GetValueOrDefault("Water") == 2 && fireCount == 1)
             spellType = SpellType.WaterWall;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Water", "Water" }))
+        else if (elementCounts.GetValueOrDefault("Water") == 3)
             spellType = SpellType.Geyser;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Water", "Wind" }))
+        else if (elementCounts.GetValueOrDefault("Water") == 2 && elementCounts.GetValueOrDefault("Wind") == 1)
             spellType = SpellType.SelfHeal;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Wind", "Wind", "Fire" }))
+        else if (elementCounts.GetValueOrDefault("Wind") == 2 && fireCount == 1)
             spellType = SpellType.Ghost;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Wind", "Wind", "Water" }))
+        else if (elementCounts.GetValueOrDefault("Wind") == 2 && elementCounts.GetValueOrDefault("Water") == 1)
             spellType = SpellType.Whirwind;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Wind", "Wind", "Wind" }))
+        else if (elementCounts.GetValueOrDefault("Wind") == 3)
             spellType = SpellType.Tornado;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Fire", "Wind" }))
+        else if (fireCount == 1 && elementCounts.GetValueOrDefault("Water") == 1 && elementCounts.GetValueOrDefault("Wind") == 1)
             spellType = SpellType.Shockwave;
 
+        // Return the spell prefab if the spell type is found
         if (spellType.HasValue && spellPrefabs.ContainsKey(spellType.Value))
         {
             return spellPrefabs[spellType.Value];

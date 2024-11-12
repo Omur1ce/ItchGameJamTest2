@@ -5,10 +5,12 @@ public class Whirlwind : MonoBehaviour
     public int damageAmount = 0;           // Damage dealt per hit
     public float pushForce = 5f;            // Force to push enemies away
     public float particleEffectSize = 0.1f;
-    public ParticleSystem damageEffect;     // Assign a particle effect prefab in the inspector
+    public ParticleSystem damageEffect;
+    public float delay = 3f;
 
     void Start()
     {
+        Destroy(gameObject, delay);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -27,16 +29,6 @@ public class Whirlwind : MonoBehaviour
                 enemyRb.AddForce(pushDirection * pushForce, ForceMode2D.Impulse);
             }
 
-            // Play damage effect
-            if (damageEffect != null)
-            {
-                ParticleSystem effect = Instantiate(damageEffect, other.transform.position, Quaternion.identity);
-                var main = effect.main;
-                main.startSizeMultiplier = particleEffectSize;
-                Destroy(effect.gameObject, effect.main.duration); // Destroy effect after it finishes
-            }
-
-            Destroy(gameObject);
         }
     }
 }
