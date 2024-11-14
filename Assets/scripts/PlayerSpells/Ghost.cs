@@ -33,6 +33,8 @@ public class Ghost : MonoBehaviour
         {
             Debug.LogError("Player object not found!");
         }
+
+        Destroy(gameObject, 1f);
     }
 
     private IEnumerator TemporarySpeedBoost()
@@ -45,5 +47,6 @@ public class Ghost : MonoBehaviour
 
         // Revert the player's speed to the original speed
         playerMovement.moveSpeed = originalSpeed;
+        Destroy(gameObject);
     }
 }
