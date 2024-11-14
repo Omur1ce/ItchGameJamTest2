@@ -10,14 +10,13 @@ public class Absorb : MonoBehaviour
 
     public Queue<string> storedElements = new Queue<string>();
     private SpriteRenderer spriteRenderer;
-    private int currentState = 0;  // 0: Fire, 1: Water, 2: Wind
-    public string element = "Fire";  // Current element of the player
+    private int currentState = 0;
+    public string element = "Fire";
 
     public GameObject storedSpellPrefab;
     private AudioSource audioSource;
     public AudioClip absorbSFX;
 
-    // Elements array to define the order: Fire -> Water -> Wind -> Fire
     private string[] elements = { "Fire", "Wind", "Water" };
     private Color[] elementColors;
 
@@ -64,12 +63,10 @@ public class Absorb : MonoBehaviour
         {
 
             // Add the element if there's room
-            //audioSource.PlayOneShot(absorbSFX);
             storedElements.Enqueue(incomingElement);
         }
         else if (storedElements.Count == 3)
         {
-            //audioSource.PlayOneShot(absorbSFX);
             // Remove the oldest element
             storedElements.Dequeue();
 

@@ -272,7 +272,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StrongLightening_0: 8427346690980704029
+      StrongLightening_1: -3396838871670318876
+      StrongLightening_2: 8193593242389311775
+      StrongLightening_3: 5999893443902941649
+      StrongLightening_4: 5097905590053102803
+      StrongLightening_5: -681263194960586031
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

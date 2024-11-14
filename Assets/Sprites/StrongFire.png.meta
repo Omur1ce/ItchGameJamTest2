@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StrongFire_0: -5356598249241518055
+      StrongFire_1: 4445249804237937747
+      StrongFire_2: 2913568193069942405
+      StrongFire_3: -3484570231727524116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

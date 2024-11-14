@@ -9,7 +9,6 @@ public class Tornado : MonoBehaviour
 
     void Start()
     {
-        // Automatically destroy the spell object after its duration
         Destroy(gameObject, duration);
     }
 
@@ -31,13 +30,6 @@ public class Tornado : MonoBehaviour
                 rb.AddForce(direction * pullForce * Time.fixedDeltaTime, ForceMode2D.Force);
             }
         }
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        // Draw the radius of the pull area for visualization in the editor
-        Gizmos.color = Color.blue;
-        Gizmos.DrawWireSphere(transform.position, pullRadius);
     }
 
 
