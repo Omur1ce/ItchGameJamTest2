@@ -9,7 +9,6 @@ public class Tornado : MonoBehaviour
 
     void Start()
     {
-
         Destroy(gameObject, duration);
     }
 
@@ -32,6 +31,8 @@ public class Tornado : MonoBehaviour
             }
         }
     }
+
+
     private void OnDestroy()
     {
         

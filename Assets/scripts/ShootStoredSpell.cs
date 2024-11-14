@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ShootStoredSpell : MonoBehaviour
@@ -19,6 +20,7 @@ public class ShootStoredSpell : MonoBehaviour
     public GameObject shockwavePrefab;
 
     private Dictionary<SpellType, GameObject> spellPrefabs;
+    public GameObject memorisedSpell;
 
     void Awake()
     {
@@ -44,6 +46,10 @@ public class ShootStoredSpell : MonoBehaviour
         {
             ShootSpell();
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            MemoriseSpell();
+        }
     }
 
     public enum SpellType
@@ -68,32 +74,34 @@ public class ShootStoredSpell : MonoBehaviour
             return null;
         }
 
-        List<string> elements = new List<string>(storedElements);
+        // Count each element's occurrences
+        var elementCounts = storedElements.GroupBy(element => element)
+                                          .ToDictionary(group => group.Key, group => group.Count());
 
-        HashSet<string> elementsSet = new HashSet<string>(storedElements);
         SpellType? spellType = null;
 
-        if (elementsSet.SetEquals(new HashSet<string> { "Fire", "Fire", "Fire" }))
+        if (elementCounts.TryGetValue("Fire", out int fireCount) && fireCount == 3)
             spellType = SpellType.Fireball;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Fire", "Fire", "Water" }))
+        else if (fireCount == 2 && elementCounts.GetValueOrDefault("Water") == 1)
             spellType = SpellType.SummonMageInterns;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Fire", "Fire", "Wind" }))
+        else if (fireCount == 2 && elementCounts.GetValueOrDefault("Wind") == 1)
             spellType = SpellType.FireWhirlwind;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Water", "Fire" }))
+        else if (elementCounts.GetValueOrDefault("Water") == 2 && fireCount == 1)
             spellType = SpellType.WaterWall;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Water", "Water" }))
+        else if (elementCounts.GetValueOrDefault("Water") == 3)
             spellType = SpellType.Geyser;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Water", "Wind" }))
+        else if (elementCounts.GetValueOrDefault("Water") == 2 && elementCounts.GetValueOrDefault("Wind") == 1)
             spellType = SpellType.SelfHeal;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Wind", "Wind", "Fire" }))
+        else if (elementCounts.GetValueOrDefault("Wind") == 2 && fireCount == 1)
             spellType = SpellType.Ghost;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Wind", "Wind", "Water" }))
+        else if (elementCounts.GetValueOrDefault("Wind") == 2 && elementCounts.GetValueOrDefault("Water") == 1)
             spellType = SpellType.Whirwind;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Wind", "Wind", "Wind" }))
+        else if (elementCounts.GetValueOrDefault("Wind") == 3)
             spellType = SpellType.Tornado;
-        else if (elementsSet.SetEquals(new HashSet<string> { "Water", "Fire", "Wind" }))
+        else if (fireCount == 1 && elementCounts.GetValueOrDefault("Water") == 1 && elementCounts.GetValueOrDefault("Wind") == 1)
             spellType = SpellType.Shockwave;
 
+        // Return the spell prefab if the spell type is found
         if (spellType.HasValue && spellPrefabs.ContainsKey(spellType.Value))
         {
             return spellPrefabs[spellType.Value];
@@ -128,6 +136,46 @@ public class ShootStoredSpell : MonoBehaviour
         else
         {
             Debug.Log("No spell stored to shoot!");
+        }
+    }
+
+    void MemoriseSpell()
+    {
+        if (memorisedSpell == null)
+        {
+            // Memorise the spell and clear stored elements
+            memorisedSpell = SelectSpell(script.storedElements);
+            if (memorisedSpell != null)
+            {
+                script.ClearStoredElements();
+                Debug.Log("Spell memorised!");
+            }
+            else
+            {
+                Debug.Log("No spell available to memorise!");
+            }
+        }
+        else
+        {
+            // Fire the memorised spell
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 direction = (mousePosition - transform.position).normalized;
+
+            // Calculate the angle in degrees
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            // Instantiate the spell and rotate it to point towards the mouse
+            GameObject spellProjectile = Instantiate(memorisedSpell, transform.position, Quaternion.Euler(0, 0, angle));
+
+            Rigidbody2D rb = spellProjectile.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.linearVelocity = direction * spellSpeed;
+            }
+
+            // Clear memorised spell after shooting
+            memorisedSpell = null;
+            Debug.Log("Spell fired!");
         }
     }
 

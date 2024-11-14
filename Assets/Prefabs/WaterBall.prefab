@@ -254,7 +254,7 @@ MonoBehaviour:
   damageAmount: 10
   element: Water
   particleEffectSize: 1
-  damageEffect: {fileID: 7022268795503775818, guid: 7377f38a94f13bd43924090d4a77f29e, type: 3}
+  damageEffect: {fileID: 0}
   ChildBullet: {fileID: 0}
 --- !u!95 &6541218444789772620
 Animator:

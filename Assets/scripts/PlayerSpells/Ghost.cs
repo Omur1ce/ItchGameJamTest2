@@ -3,25 +3,23 @@ using UnityEngine;
 
 public class Ghost : MonoBehaviour
 {
-    public float boostedSpeed = 10f;        // Temporary boosted speed
-    public float originalSpeed = 5f;        // Original speed to revert to
-    public float boostDuration = 5f;        // Duration of the speed boost
+    public float boostedSpeed = 10f;
+    public float originalSpeed = 5f;
+    public float boostDuration = 5f;
 
-    private Movemont playerMovement;        // Reference to the player's Movemont script
+    private Movemont playerMovement;
 
     void Start()
     {
-        // Find the player object by tag (make sure the player has the "Player" tag)
+
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        // Check if the player was found and has the Movemont script
         if (player != null)
         {
             playerMovement = player.GetComponent<Movemont>();
 
             if (playerMovement != null)
             {
-                // Start the speed boost
                 StartCoroutine(TemporarySpeedBoost());
             }
             else
@@ -39,13 +37,11 @@ public class Ghost : MonoBehaviour
 
     private IEnumerator TemporarySpeedBoost()
     {
-        // Set the player's speed to the boosted speed
         playerMovement.moveSpeed = boostedSpeed;
 
         // Wait for the specified boost duration
         yield return new WaitForSeconds(boostDuration);
 
-        // Revert the player's speed to the original speed
         playerMovement.moveSpeed = originalSpeed;
         Destroy(gameObject);
     }
